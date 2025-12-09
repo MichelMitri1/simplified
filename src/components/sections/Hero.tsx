@@ -5,6 +5,14 @@ import Button from "@/components/ui/Button";
 import { ArrowRight, Sparkles } from "lucide-react";
 
 export default function Hero() {
+  const scrollToSection = (id: string) => {
+    if (typeof document === "undefined") return;
+    const el = document.getElementById(id);
+    if (el) {
+      el.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  };
+
   return (
     <section className="relative min-h-screen flex items-center justify-center bg-white">
       <div className="container mx-auto px-4 md:px-6 lg:px-8 max-w-7xl relative z-10 pt-12">
@@ -57,11 +65,20 @@ export default function Hero() {
             transition={{ duration: 0.6, delay: 0.3 }}
             className="flex flex-col sm:flex-row gap-4 justify-center items-center"
           >
-            <Button size="lg" variant="primary" className="group">
+            <Button
+              size="lg"
+              variant="primary"
+              className="group"
+              onClick={() => scrollToSection("waitlist")}
+            >
               Start Learning
               <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </Button>
-            <Button size="lg" variant="outline">
+            <Button
+              size="lg"
+              variant="outline"
+              onClick={() => scrollToSection("how-it-works")}
+            >
               See How It Works
             </Button>
           </motion.div>

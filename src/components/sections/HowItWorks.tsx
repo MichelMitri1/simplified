@@ -34,7 +34,7 @@ const steps = [
 
 export default function HowItWorks() {
   return (
-    <Section background="gray">
+    <Section id="how-it-works" background="gray">
       <SectionHeader
         title="How Simplified.org Works"
         subtitle="A structured approach to learning tech skills."

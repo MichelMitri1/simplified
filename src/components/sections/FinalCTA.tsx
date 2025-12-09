@@ -70,7 +70,7 @@ export default function FinalCTA() {
     setIsSubmitted(true);
   };
   return (
-    <section className="relative py-32 overflow-hidden">
+    <section id="waitlist" className="relative py-32 overflow-hidden">
       {/* Background */}
       <div className="absolute inset-0 bg-brand" />
       
