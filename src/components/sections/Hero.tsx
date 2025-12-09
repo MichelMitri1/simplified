@@ -18,7 +18,7 @@ export default function Hero() {
           >
             <Sparkles className="w-4 h-4 text-brand" />
             <span className="text-sm font-semibold text-gray-700">
-              Education Platform for Developers
+              Education Platform for Career Changers
             </span>
           </motion.div>
 

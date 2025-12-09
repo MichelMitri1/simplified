@@ -15,7 +15,7 @@ const spaceGrotesk = Space_Grotesk({
 });
 
 export const metadata: Metadata = {
-  title: "Simplified.org - Become a Job-Ready Developer",
+  title: "Simplified.org - Learn tech skills that actually matter",
   description: "The world's most effective education platform for landing high-paying tech roles. Job guarantee, 1:1 mentorship, AI-powered coursework.",
 };
 
