@@ -43,7 +43,7 @@ const testimonials = [
 
 export default function Testimonials() {
   return (
-    <Section background="white">
+    <Section id="testimonials" background="white">
       <SectionHeader
         title="Success Stories"
         subtitle="Hear from students who built their careers in tech."

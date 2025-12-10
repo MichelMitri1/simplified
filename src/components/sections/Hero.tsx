@@ -31,32 +31,38 @@ export default function Hero() {
           </motion.div>
 
           {/* Main Headline */}
-          <motion.h1
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.1 }}
-            className="text-5xl md:text-7xl lg:text-8xl font-bold mb-8 leading-tight text-balance"
-          >
-            Learn tech skills that{" "}
-            <span className="text-brand">
-              actually matter
-            </span>
-            .
-          </motion.h1>
+          <div className="flex flex-col gap-4 ">
+            <motion.h1
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              className="text-5xl md:text-7xl lg:text-8xl font-bold leading-tight text-balance"
+            >
+              Your new career{" "}
+              <span className="text-brand">
+                starts here
+              </span>
+              .
+            </motion.h1>
 
-          {/* Subheadline */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="mb-12 max-w-3xl mx-auto text-balance"
-          >
-            <ul className="text-xl md:text-2xl text-gray-600 space-y-3">
-              <li>• Your new career starts here</li>
-              <li>• No experience or degree required</li>
-              <li>• Learn the fastest way to actually break into a new career with our free introduction course</li>
-            </ul>
-          </motion.div>
+            {/* Subheadline */}
+            <motion.h3
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="text-xl md:text-2xl font-semibold text-gray-800 max-w-3xl mx-auto text-balance"
+            >
+              No experience or degree required
+            </motion.h3>
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="text-lg md:text-xl font-medium text-gray-600 mb-12 max-w-3xl mx-auto text-balance"
+            >
+              Learn the fastest way to actually break into a new career with our free introduction course
+            </motion.p>
+          </div>
 
           {/* CTAs */}
           <motion.div

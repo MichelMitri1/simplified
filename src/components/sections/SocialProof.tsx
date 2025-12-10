@@ -12,7 +12,7 @@ const companies = [
 
 export default function SocialProof() {
   return (
-    <Section background="white" className="py-16">
+    <Section id="social-proof" background="white" className="py-16">
       <div className="text-center mb-12">
         <motion.p
           initial={{ opacity: 0, y: 20 }}
@@ -51,7 +51,7 @@ export default function SocialProof() {
       </div>
       
       {/* Stats Bar */}
-      <motion.div
+      {/* <motion.div
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
@@ -78,7 +78,7 @@ export default function SocialProof() {
             </div>
           </div>
         </div>
-      </motion.div>
+      </motion.div> */}
     </Section>
   );
 }

@@ -44,7 +44,7 @@ const programs = [
 
 export default function Programs() {
   return (
-    <Section background="white">
+    <Section id="programs" background="white">
       <SectionHeader
         title="Programs to Build Your Skills"
         subtitle="Choose your path in tech. All programs include 1:1 mentorship and lifetime access."

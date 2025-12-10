@@ -46,7 +46,7 @@ const features = [
 
 export default function WhatMakesUsDifferent() {
   return (
-    <Section background="gradient">
+    <Section id="why-us" background="gradient">
       <SectionHeader
         title="What Makes Us Different"
         subtitle="Our approach to education focuses on practical skills and personalized learning."
