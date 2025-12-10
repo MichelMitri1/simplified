@@ -15,21 +15,8 @@ export default function Hero() {
 
   return (
     <section className="relative min-h-screen flex items-center justify-center bg-white">
-      <div className="container mx-auto px-4 md:px-6 lg:px-8 max-w-7xl relative z-10 pt-12">
+      <div className="container mx-auto px-4 md:px-6 lg:px-8 max-w-7xl relative z-10 pt-12 md:pt-0">
         <div className="text-center max-w-5xl mx-auto">
-          {/* Badge */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="inline-flex items-center gap-2 bg-white/80 backdrop-blur-sm border border-gray-200 rounded-full px-6 py-2 mb-8 shadow-lg"
-          >
-            <Sparkles className="w-4 h-4 text-brand" />
-            <span className="text-sm font-semibold text-gray-700">
-              Education Platform for Career Changers
-            </span>
-          </motion.div>
-
           {/* Main Headline */}
           <div className="flex flex-col gap-4 ">
             <motion.h1

@@ -20,9 +20,9 @@ export default function Footer() {
           </div>
 
           {/* Explore Links */}
-          <div className="col-span-4 text-sm">
+          <div className="col-span-2 md:col-span-4 text-sm">
             <p className="font-medium text-white mb-4">Explore</p>
-            <ul className="flex flex-wrap gap-x-6 gap-y-2">
+            <ul className="flex flex-col space-y-2 md:flex-wrap md:gap-x-6 md:gap-y-2">
               <li>
                 <a
                   href="#how-it-works"
