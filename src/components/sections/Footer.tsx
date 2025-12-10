@@ -22,7 +22,7 @@ export default function Footer() {
           {/* Explore Links */}
           <div className="col-span-2 md:col-span-4 text-sm">
             <p className="font-medium text-white mb-4">Explore</p>
-            <ul className="flex flex-col space-y-2 md:flex-wrap md:gap-x-6 md:gap-y-2">
+            <ul className="flex flex-col space-y-2 md:flex-row md:flex-wrap md:gap-x-6 md:gap-y-2 md:space-y-0">
               <li>
                 <a
                   href="#how-it-works"
