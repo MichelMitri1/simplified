@@ -1,7 +1,7 @@
 "use client";
 
 import Button from "@/components/ui/Button";
-import simplifiedLogo from "@/assets/simplified-logo.png";
+import simplifiedLogo from "@/assets/simplified-logo.svg";
 
 export default function Navbar() {
   const scrollToSection = (id: string) => {
