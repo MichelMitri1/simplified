@@ -17,7 +17,7 @@ export default function Navbar() {
       <div className="container mx-auto px-4 md:px-6 lg:px-8 max-w-7xl">
         <div className="flex items-center justify-between h-16 md:h-20">
           <div className="flex items-center gap-2 md:gap-3">
-            <img src={simplifiedLogo.src} alt="Simplified Logo" className="h-8 md:h-12"/>
+            <img src={simplifiedLogo.src} alt="Simplified Logo" className="h-8 md:h-10"/>
             <span className="text-sm md:text-xl font-bold text-gray-900">Simplified.org</span>
           </div>
           <Button
