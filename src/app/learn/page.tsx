@@ -2,7 +2,9 @@ import LearnPage from "@/components/learn/LearnPage";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Learn Tech Skills | Free Career Resources & Tutorials - Simplified.org",
+  title: {
+    absolute: "Learn - Simplified Blog",
+  },
   description: "Master tech careers with expert tutorials on software engineering, data science, UX design, QA, and AI automation. Free resources to help you break into tech in 2025.",
   keywords: [
     "tech career tutorials",

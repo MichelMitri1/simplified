@@ -56,7 +56,9 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const category = (post.meta ?? "").split("•")[0]?.trim() || "Tech Career";
   
   return {
-    title: `${post.title} | Simplified.org Learn`,
+    title: {
+      absolute: "Learn - Simplified Blog",
+    },
     description,
     keywords: [
       post.title.toLowerCase(),
