@@ -9,25 +9,25 @@ const steps = [
   {
     icon: BookOpen,
     title: "Choose Your Path",
-    description: "Select from our programs in Frontend, Backend, AI, or Cybersecurity. Each path is designed for practical learning.",
+    description: "Select from our tech bootcamps: Frontend Development, Backend Engineering, or AI & Machine Learning. Each path is designed for hands-on learning with real-world job requirements.",
     color: "bg-brand",
   },
   {
     icon: Users,
     title: "Learn with Mentors",
-    description: "Get 1:1 guidance from industry professionals. Our mentors bring real-world experience to your learning.",
+    description: "Get personalized 1:1 guidance from industry professionals. They'll review your code, answer questions, and share practical insights from real-world experience.",
     color: "bg-black",
   },
   {
     icon: Briefcase,
     title: "Build Your Portfolio",
-    description: "Work on real projects. Build a portfolio that showcases your abilities.",
+    description: "Work on real-world projects that showcase your skills to potential employers. Build a portfolio with clean code, responsive design, and production-ready applications.",
     color: "bg-brand",
   },
   {
     icon: TrendingUp,
     title: "Start Your Career",
-    description: "Our career services team helps you prepare for interviews and connect with companies.",
+    description: "Get career support to land your first tech role. We'll help with your resume, interview prep, and connect you with our network of hiring partners.",
     color: "bg-black",
   },
 ];
@@ -37,7 +37,7 @@ export default function HowItWorks() {
     <Section id="how-it-works" background="gray">
       <SectionHeader
         title="How Simplified.org Works"
-        subtitle="A structured approach to learning tech skills."
+        subtitle="A proven approach to learning tech skills and launching your career. Our four-step process has helped thousands transition into tech. Each step builds on the previous one, developing your technical skills and professional confidence."
       />
       
       <div className="relative">
@@ -105,7 +105,7 @@ export default function HowItWorks() {
         className="text-center mt-16"
       >
         <p className="text-lg text-gray-600 mb-6">
-          Join 15,000+ students learning with Simplified.org
+          Join 1k+ students learning with Simplified.org
         </p>
       </motion.div>
     </Section>

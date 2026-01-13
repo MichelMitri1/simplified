@@ -1,43 +1,40 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 import Section from "@/components/ui/Section";
 import SectionHeader from "@/components/ui/SectionHeader";
 import Card from "@/components/ui/Card";
 import { Star, Quote } from "lucide-react";
 
+import DestinImg from "@/assets/destin-strong.jpg";
+import ThanyaImg from "@/assets/thanya.jpg";
+import KhosroImg from "@/assets/khosro.jpeg";
+
 const testimonials = [
   {
-    name: "Sarah Chen",
-    role: "Frontend Developer at Google",
-    image: "SC", // Placeholder - replace with actual image
-    quote: "Simplified.org helped me transition into tech. I went from retail to frontend development at Google in 8 months. The mentorship was excellent.",
+    name: "Destin Strong",
+    image: DestinImg,
+    quote: "I think the greatest thing about this program is the access to the support team 24/7. They are always there ready to help you however you need. They always check up on you to see if you need anything. There are also so many useful resources available on the site that you can pretty much find anything you're looking for. The structure of the program is easy to follow and as a beginner who had no previous coding experience, this is exactly what I needed as a roadmap. There's not really anything negative I can say about FES because they have literally been there every step of my journey to help get me where I want to be.",
     rating: 5,
-    program: "Frontend Development",
   },
   {
-    name: "Marcus Johnson",
-    role: "Backend Engineer at Meta",
-    image: "MJ", // Placeholder - replace with actual image
-    quote: "The structured learning path gave me confidence. Within months of graduating, I had interviews at several companies. Now I'm building systems at Meta.",
+    name: "Thanya",
+    image: ThanyaImg,
+    quote: "I'm excited to say that I'm in the process of applying for jobs and feel confident with the skills I developed here at FES. The mentors are amazing in being informative and providing support in difficult times. Whenever I felt stuck, I would reach out to the mentors, and someone was always there when I needed them, and it's nice learning from someone experienced! It's been quite a journey for me, but I don't regret a single moment because I learned so much about myself and what I'm capable of creating. The skills I learned with FES are forever, and I've gained a great understanding of problem-solving, building, and being creative when building these websites. I recommend FES for those who are dedicated to learning, willing to put in the work, and don't mind adapting to change.",
     rating: 5,
-    program: "Backend Engineering",
+  },
+   {
+    name: "Khosro Shariatzadeh",
+    image: KhosroImg,
+    quote: "I can tell FES Bootcamp is one of the best experiences l've had in learning online. I have no experience or knowledge in coding or even computer science, but the way they explain all the topics in coding from the beginning makes it so simple to understand and all the projects that you are going to do along the course help you be more confident in coding. Besides all of those benefits, you'll have 24/7 access to help from professional mentors from reviewing your codes, and projects to help you find the solutions if you get stuck in any step. They support you from the beginning to practice interviews, building a resume and applying for a job.",
+    rating: 5,
   },
   {
-    name: "Priya Patel",
-    role: "ML Engineer at Amazon",
-    image: "PP", // Placeholder - replace with actual image
-    quote: "The AI & ML program is comprehensive. My mentor brought expertise from OpenAI and the projects I built helped me get interviews at leading companies.",
+    name: "Mat Grahame",
+    image: null,
+    quote: "FES has been a great tool to learn how to do frontend development. The lessons they provide are direct and teach you the best way to learn that is also easy to understand. They also do 1 on 1 and a weekly Q&A to help you even further. Could not recommend it enough",
     rating: 5,
-    program: "AI & Machine Learning",
-  },
-  {
-    name: "Alex Rivera",
-    role: "Security Engineer at Microsoft",
-    image: "AR", // Placeholder - replace with actual image
-    quote: "I was skeptical about bootcamps, but Simplified.org delivered. The curriculum is practical, the mentors are knowledgeable, and the support is solid.",
-    rating: 5,
-    program: "Cybersecurity",
   },
 ];
 
@@ -46,9 +43,9 @@ export default function Testimonials() {
     <Section id="testimonials" background="white">
       <SectionHeader
         title="Success Stories"
-        subtitle="Hear from students who built their careers in tech."
+        subtitle="Hear from real students who built careers in tech through our programs. These testimonials show the impact of structured learning, mentorship, and hands-on projects. Each graduate shares their journey and how they landed roles at leading companies."
       />
-      
+
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         {testimonials.map((testimonial, index) => (
           <motion.div
@@ -63,37 +60,49 @@ export default function Testimonials() {
               <div className="absolute top-6 right-6 opacity-10">
                 <Quote className="w-16 h-16 text-brand" />
               </div>
-              
+
               {/* Rating */}
               <div className="flex gap-1 mb-4">
                 {[...Array(testimonial.rating)].map((_, i) => (
                   <Star key={i} className="w-5 h-5 fill-yellow-400 text-yellow-400" />
                 ))}
               </div>
-              
+
               {/* Quote */}
               <p className="text-gray-700 text-lg leading-relaxed mb-6 relative z-10">
                 &quot;{testimonial.quote}&quot;
               </p>
-              
+
               {/* Author */}
               <div className="flex items-center gap-4 pt-6 border-t border-gray-100">
-                {/* Avatar placeholder */}
-                <div className="w-14 h-14 rounded-full bg-brand flex items-center justify-center text-white font-bold text-lg">
-                  {testimonial.image}
-                </div>
-                
+                {testimonial.image ? (
+                  <Image
+                    src={testimonial.image}
+                    alt={`${testimonial.name} photo`}
+                    width={56}
+                    height={56}
+                    className="w-14 h-14 rounded-full object-cover border border-gray-200"
+                  />
+                ) : (
+                  <div className="w-14 h-14 rounded-full bg-brand flex items-center justify-center text-white font-bold text-lg">
+                    {testimonial.name
+                      .split(" ")
+                      .map((n) => n[0])
+                      .slice(0, 2)
+                      .join("")
+                      .toUpperCase()}
+                  </div>
+                )}
+
                 <div className="flex-1">
                   <div className="font-bold text-gray-900">{testimonial.name}</div>
-                  <div className="text-sm text-gray-600">{testimonial.role}</div>
-                  <div className="text-xs text-gray-500 mt-1">{testimonial.program}</div>
                 </div>
               </div>
             </Card>
           </motion.div>
         ))}
       </div>
-      
+
       {/* More student stories CTA removed per request */}
     </Section>
   );

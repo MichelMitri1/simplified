@@ -25,7 +25,7 @@ export default function Hero() {
               transition={{ duration: 0.6, delay: 0.1 }}
               className="text-5xl md:text-7xl lg:text-8xl font-bold leading-tight text-balance"
             >
-              Your new career{" "}
+              Your new career in our tech bootcamp{" "}
               <span className="text-brand">
                 starts here
               </span>
@@ -41,14 +41,24 @@ export default function Hero() {
             >
               No experience or degree required
             </motion.h3>
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="text-lg md:text-xl font-medium text-gray-600 mb-12 max-w-3xl mx-auto text-balance"
-            >
-              Learn the fastest way to actually break into a new career with our free introduction course
-            </motion.p>
+            <div className="space-y-4 mb-12">
+              <motion.p
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+                className="text-lg md:text-xl font-medium text-gray-600 max-w-3xl mx-auto text-balance"
+              >
+                Join our comprehensive tech bootcamps and launch your career as a professional software engineer perfect for career changers, part-time learners, and aspiring web developers. Our curriculum is designed by industry experts and updated regularly to match current job market demands.
+              </motion.p>
+              <motion.p
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.25 }}
+                className="text-base md:text-lg text-gray-600 max-w-3xl mx-auto text-balance"
+              >
+                
+              </motion.p>
+            </div>
           </div>
 
           {/* CTAs */}

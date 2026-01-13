@@ -4,15 +4,14 @@ import { motion } from "framer-motion";
 import Section from "@/components/ui/Section";
 import SectionHeader from "@/components/ui/SectionHeader";
 import Card from "@/components/ui/Card";
-import Button from "@/components/ui/Button";
-import { Code2, Server, Brain, Shield, ArrowRight } from "lucide-react";
+import { Code2, Server, Brain, Megaphone } from "lucide-react";
 
 const programs = [
   {
     icon: Code2,
     title: "Frontend Development",
     duration: "6 months",
-    description: "Master React, Next.js, TypeScript, and modern UI/UX design. Build web applications users love.",
+    description: "Master front end development with React, Next.js, TypeScript, and modern UI/UX design. Build responsive, accessible web applications that users love. Cover everything from HTML and CSS basics to advanced React patterns, state management, and deployment. Learn component architecture, performance optimization, and modern build tools used by professional engineers.",
     skills: ["React", "Next.js", "TypeScript", "Tailwind CSS", "UI/UX"],
     color: "bg-brand",
   },
@@ -20,7 +19,7 @@ const programs = [
     icon: Server,
     title: "Backend Engineering",
     duration: "6 months",
-    description: "Learn Node.js, databases, APIs, and cloud infrastructure. Build scalable systems.",
+    description: "Learn server-side development with Node.js, database design, REST and GraphQL APIs, and cloud deployment. Build scalable, secure systems that handle real-world traffic. Cover server architecture, authentication, database optimization, Docker, CI/CD pipelines, and cloud platforms. Gain skills to build and maintain production-grade backend systems.",
     skills: ["Node.js", "PostgreSQL", "AWS", "Docker", "REST APIs"],
     color: "bg-black",
   },
@@ -28,17 +27,17 @@ const programs = [
     icon: Brain,
     title: "AI & Machine Learning",
     duration: "8 months",
-    description: "Dive into Python, ML algorithms, and AI frameworks. Build intelligent systems.",
+    description: "Master AI and machine learning with Python, TensorFlow, and PyTorch. Cover generative AI, deep learning, natural language processing, and computer vision. Learn data preprocessing, model training, neural networks, and deployment. Build and deploy intelligent systems that solve real-world problems.",
     skills: ["Python", "TensorFlow", "PyTorch", "NLP", "Computer Vision"],
     color: "bg-brand",
   },
   {
-    icon: Shield,
-    title: "Cybersecurity",
-    duration: "7 months",
-    description: "Learn ethical hacking, network security, and threat analysis. Protect organizations.",
-    skills: ["Penetration Testing", "Network Security", "Security Auditing", "SIEM", "Cloud Security"],
-    color: "bg-black",
+    icon: Megaphone,
+    title: "Digital Marketing",
+    duration: "4 months",
+    description: "Learn the fundamentals of digital marketing including SEO, content marketing, social media strategy, and analytics. Master Google Ads, email marketing, conversion optimization, and marketing automation. Build campaigns that drive traffic, engagement, and sales. Understand data-driven decision making and marketing funnels.",
+    skills: ["SEO", "Content Marketing", "Google Ads", "Analytics", "Social Media"],
+    color: "bg-blue-600",
   },
 ];
 
@@ -47,7 +46,7 @@ export default function Programs() {
     <Section id="programs" background="white">
       <SectionHeader
         title="Programs to Build Your Skills"
-        subtitle="Choose your path in tech. All programs include 1:1 mentorship and lifetime access."
+        subtitle="Choose your path to work in tech and launch your career. Our coding bootcamps cover full stack web development and AI. All programs include 1:1 mentorship, hands-on projects, career support, and lifetime access. Go from beginner to job-ready, no matter your background."
       />
       
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -107,7 +106,7 @@ export default function Programs() {
         className="mt-12 text-center"
       >
         <p className="text-gray-600">
-          All programs include 1:1 mentorship and career support.
+          All our stack web development courses include 1:1 mentorship, career coaching, and career support.
         </p>
       </motion.div>
     </Section>

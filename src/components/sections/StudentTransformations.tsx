@@ -79,7 +79,7 @@ export default function StudentTransformations() {
     <Section background="gray">
       <SectionHeader
         title="Student Career Changes"
-        subtitle="Students from different backgrounds building careers in tech."
+        subtitle="Real stories from students who transitioned from non-tech careers to thriving tech roles. These transformations show that with dedication and the right guidance, anyone can break into tech—regardless of background."
       />
       
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">

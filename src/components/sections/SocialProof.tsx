@@ -5,9 +5,21 @@ import Section from "@/components/ui/Section";
 
 // Company logos (using placeholder text - in production, replace with actual logo images)
 const companies = [
-  "Google", "Meta", "Amazon", "Microsoft", "Apple",
-  "Netflix", "Uber", "Airbnb", "Stripe", "Shopify",
-  "Tesla", "Adobe", "Salesforce", "Oracle", "IBM"
+  { name: "Google", url: "https://www.google.com" },
+  { name: "Meta", url: "https://www.meta.com" },
+  { name: "Amazon", url: "https://www.amazon.com" },
+  { name: "Microsoft", url: "https://www.microsoft.com" },
+  { name: "Apple", url: "https://www.apple.com" },
+  { name: "Netflix", url: "https://www.netflix.com" },
+  { name: "Uber", url: "https://www.uber.com" },
+  { name: "Airbnb", url: "https://www.airbnb.com" },
+  { name: "Stripe", url: "https://www.stripe.com" },
+  { name: "Shopify", url: "https://www.shopify.com" },
+  { name: "Tesla", url: "https://www.tesla.com" },
+  { name: "Adobe", url: "https://www.adobe.com" },
+  { name: "Salesforce", url: "https://www.salesforce.com" },
+  { name: "Oracle", url: "https://www.oracle.com" },
+  { name: "IBM", url: "https://www.ibm.com" }
 ];
 
 export default function SocialProof() {
@@ -20,7 +32,7 @@ export default function SocialProof() {
           viewport={{ once: true }}
           className="text-sm font-semibold text-gray-500 uppercase tracking-wider mb-8"
         >
-          Students work at leading companies
+          Our graduates work at leading tech companies worldwide
         </motion.p>
       </div>
       
@@ -42,9 +54,14 @@ export default function SocialProof() {
               className="flex items-center justify-center"
             >
               {/* Placeholder for company logos - replace with actual <Image> components */}
-              <div className="text-2xl font-bold text-gray-400 hover:text-gray-700 transition-colors duration-300">
-                {company}
-              </div>
+              <a 
+                href={company.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-2xl font-bold text-gray-400 hover:text-gray-700 transition-colors duration-300"
+              >
+                {company.name}
+              </a>
             </motion.div>
           ))}
         </motion.div>

@@ -1,5 +1,7 @@
 "use client";
 
+import Link from "next/link";
+
 export default function Footer() {
   return (
     <footer className="bg-gray-900 text-gray-300">
@@ -62,6 +64,14 @@ export default function Footer() {
                 >
                   Join waitlist
                 </a>
+              </li>
+              <li>
+                <Link
+                  href="/learn"
+                  className="text-gray-400 hover:text-white transition-colors duration-200"
+                >
+                  Learn
+                </Link>
               </li>
             </ul>
           </div>
