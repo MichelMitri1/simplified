@@ -71,13 +71,6 @@ export const learnData: {
       image: u("photo-1513530534585-c7b1394c6d51?ixlib=rb-4.0.3"),
     },
     {
-      id: "d2b",
-      title: "What Skills Do You Need to Become a Software Engineer",
-      meta: "SOFTWARE ENGINEERING • 7 min",
-      href: toHref("What Skills Do You Need to Become a Software Engineer"),
-      image: u("photo-1513530534585-c7b1394c6d51?ixlib=rb-4.0.3"),
-    },
-    {
       id: "d3",
       title: "What Degree Do You Need to Become a Software Engineer",
       meta: "SOFTWARE ENGINEERING • 5 min",
@@ -159,7 +152,7 @@ export const learnData: {
       title: "Medical Coding for Nurses",
       meta: "SOFTWARE ENGINEERING • 6 min",
       href: toHref("Medical Coding for Nurses"),
-      image: u("photo-1521737604893-d14cc237f11d?ixlib=rb-4.0.3"),
+      image: u("photo-1515879218367-8466d910aaa4?ixlib=rb-4.0.3"),
     },
     {
       id: "d17",
@@ -187,7 +180,7 @@ export const learnData: {
       title: "Becoming a React Engineer",
       meta: "SOFTWARE ENGINEERING • 8 min",
       href: toHref("Becoming a React Engineer"),
-      image: u("photo-1521737604893-d14cc237f11d?ixlib=rb-4.0.3"),
+      image: u("photo-1517433456452-f9633a875f6f?ixlib=rb-4.0.3"),
     },
     {
       id: "d21",
@@ -286,7 +279,7 @@ export const learnData: {
       title: "How to Start a Tech Career with No Experience",
       meta: "STUDENT STORIES • 8 min",
       href: toHref("How to Start a Tech Career with No Experience"),
-      image: u("photo-1521737604893-d14cc237f11d?ixlib=rb-4.0.3"),
+      image: u("photo-1484417894907-623942c8ee29?ixlib=rb-4.0.3"),
     },
     {
       id: "n2",
@@ -346,7 +339,7 @@ export const learnData: {
       title: "What to Do If You Hate Your Job",
       meta: "CAREER CHANGE • 7 min",
       href: toHref("What to Do If You Hate Your Job"),
-      image: u("photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3"),
+      image: u("photo-1517694712202-14dd9538aa97?ixlib=rb-4.0.3"),
     },
     {
       id: "t4",
@@ -401,14 +394,14 @@ export const learnData: {
       title: "10 Tech Jobs for Ex-Teachers",
       meta: "CAREER PATH • 7 min",
       href: toHref("10 Tech Jobs for Ex-Teachers"),
-      image: u("photo-1509062522246-3755977927d7?ixlib=rb-4.0.3"),
+      image: u("photo-1487058792275-0ad4aaf24ca7?ixlib=rb-4.0.3"),
     },
     {
       id: "t11",
       title: "What to Do When a Career in Entertainment Loses its Shine",
       meta: "CAREER PATH • 6 min",
       href: toHref("What to Do When a Career in Entertainment Loses its Shine"),
-      image: u("photo-1478720568477-152d9b164e26?ixlib=rb-4.0.3"),
+      image: u("photo-1523240795612-9a054b0db644?ixlib=rb-4.0.3"),
     },
     {
       id: "t12",
@@ -448,11 +441,6 @@ const engineeringPage1: LearnItem[] = [
   ),
   pickEngineeringItem(
     "What Skills Do You Need to Become a Software Engineer in 2025",
-    "Nov 25, 2025",
-    "photo-1513530534585-c7b1394c6d51?ixlib=rb-4.0.3"
-  ),
-  pickEngineeringItem(
-    "What Skills Do You Need to Become a Software Engineer",
     "Nov 25, 2025",
     "photo-1513530534585-c7b1394c6d51?ixlib=rb-4.0.3"
   ),
@@ -502,7 +490,7 @@ const engineeringPage2Provided: LearnItem[] = [
   pickEngineeringItem(
     "How Hard is It to Learn HTML? Let's Break The Myths",
     "Dec 5, 2025",
-    "photo-1507209696998-3c532be9b2b5?ixlib=rb-4.0.3"
+    "photo-1556761175-4b46a572b786?ixlib=rb-4.0.3"
   ),
   pickEngineeringItem(
     "Full-Stack Developer vs. Software Engineer: Unraveling the Differences",
@@ -517,7 +505,7 @@ const engineeringPage2Provided: LearnItem[] = [
   pickEngineeringItem(
     "Your Ultimate Guide to Breaking into the Game Development Industry",
     "Nov 10, 2023",
-    "photo-1518770660439-4636190af475?ixlib=rb-4.0.3"
+    "photo-1502920917128-1aa500764cbd?ixlib=rb-4.0.3"
   ),
   pickEngineeringItem(
     "The How and Why of Stunning CSS Art (with Examples)",
@@ -537,7 +525,7 @@ const engineeringPage2Provided: LearnItem[] = [
   pickEngineeringItem(
     "Tools of the Trade -- Do You Need the \"Best\" Laptop to Succeed in Programming?",
     "Jun 2, 2023",
-    "photo-1529336953121-adb70b7b3986?ixlib=rb-4.0.3"
+    "photo-1513519245088-0e12902e5a38?ixlib=rb-4.0.3"
   ),
   pickEngineeringItem(
     "How Long Does It Take to Learn Coding from Scratch?",
@@ -624,7 +612,7 @@ const careerAdvicePage1: LearnItem[] = learnData.careerAdvice.concat([
     title: "Why UX/UI Design is the Career for Artists",
     meta: "UX / UI DESIGN • 8 min",
     href: toHref("Why UX/UI Design is the Career for Artists"),
-    image: u("photo-1513530534585-c7b1394c6d51?ixlib=rb-4.0.3"),
+    image: u("photo-1454165804606-c3d57bc86b40?ixlib=rb-4.0.3"),
   },
   {
     id: "n3",
@@ -658,70 +646,70 @@ const careerPathPage1: LearnItem[] = learnData.careerPath.concat([
     title: "9 Jobs That Make $80K a Year (or More!)",
     meta: "CAREER PATH • 6 min",
     href: toHref("9 Jobs That Make $80K a Year (or More!)"),
-    image: u("photo-1520975682031-a8d5bb6f4d9b?ixlib=rb-4.0.3"),
+    image: u("photo-1520034475321-cbe63696469a?ixlib=rb-4.0.3"),
   },
   {
     id: "t5",
     title: "What to Do if You've Hit a Professional Ceiling",
     meta: "INSIDE THE BOOTCAMP • 9 min",
     href: toHref("What to Do if You've Hit a Professional Ceiling"),
-    image: u("photo-1549057446-9f5c6ac91a04?ixlib=rb-4.0.3"),
+    image: u("photo-1516542076529-1ea3854896f2?ixlib=rb-4.0.3"),
   },
   {
     id: "t6",
     title: "What to Do When a Career in Entertainment Loses its Shine",
     meta: "RESOURCES • 5 min",
     href: toHref("What to Do When a Career in Entertainment Loses its Shine"),
-    image: u("photo-1529336953121-adb70b7b3986?ixlib=rb-4.0.3"),
+    image: u("photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3"),
   },
   {
     id: "t7",
     title: "Should I Quit My Job: Signs It's Time (And Red Flags to Never Ignore)",
     meta: "CAREER PATH • 10 min",
     href: toHref("Should I Quit My Job: Signs It's Time (And Red Flags to Never Ignore)"),
-    image: u("photo-1521737604893-d14cc237f11d?ixlib=rb-4.0.3"),
+    image: u("photo-1504805572947-34fad45aed93?ixlib=rb-4.0.3"),
   },
   {
     id: "t8",
     title: "10 Tech Jobs for Ex-Teachers",
     meta: "CAREER PATH • 8 min",
     href: toHref("10 Tech Jobs for Ex-Teachers"),
-    image: u("photo-1504384764586-bb4cdc1707b0?ixlib=rb-4.0.3"),
+    image: u("photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3"),
   },
   {
     id: "t9",
     title: "How to Change Careers at 50",
     meta: "CAREER CHANGE • 9 min",
     href: toHref("How to Change Careers at 50"),
-    image: u("photo-1498050108023-c5249f4df085?ixlib=rb-4.0.3"),
+    image: u("photo-1486312338219-ce68d2c6f44d?ixlib=rb-4.0.3"),
   },
   {
     id: "t10",
     title: "Career Plateau: 7 Signs You're Stuck and How to Break Free",
     meta: "CAREER PATH • 7 min",
     href: toHref("Career Plateau: 7 Signs You're Stuck and How to Break Free"),
-    image: u("photo-1517248135467-4c7edcad34c4?ixlib=rb-4.0.3"),
+    image: u("photo-1518770660439-4636190af475?ixlib=rb-4.0.3"),
   },
   {
     id: "t11",
     title: "11 Signs It's Time to Change Careers",
     meta: "CAREER CHANGE • 6 min",
     href: toHref("11 Signs It's Time to Change Careers"),
-    image: u("photo-1504384308090-c894fdcc538d?ixlib=rb-4.0.3"),
+    image: u("photo-1517816743773-6e0fd518b4a6?ixlib=rb-4.0.3"),
   },
   {
     id: "t12",
     title: "Choosing Tech Over the Trades: Why It's the Right Idea",
     meta: "CAREER ADVICE • 8 min",
     href: toHref("Choosing Tech Over the Trades: Why It's the Right Idea"),
-    image: u("photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3"),
+    image: u("photo-1505685296765-3a2736de412f?ixlib=rb-4.0.3"),
   },
   {
     id: "t13",
     title: "Dignity in the Workplace: Ditch Your Bad Job, Even if It Pays Well",
     meta: "CAREER ADVICE • 7 min",
     href: toHref("Dignity in the Workplace: Ditch Your Bad Job, Even if It Pays Well"),
-    image: u("photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3"),
+    image: u("photo-1484788984921-03950022c9ef?ixlib=rb-4.0.3"),
   },
 ]);
 

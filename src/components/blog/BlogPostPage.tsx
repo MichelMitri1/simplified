@@ -128,7 +128,7 @@ export default function BlogPostPage({ slug }: { slug: string }) {
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbData) }}
             />
-            <Navbar />
+            <Navbar sticky={false} />
             {/* PAGE WRAP */}
             <div className="mx-auto w-full max-w-[1180px] px-5 pb-16 pt-8">
                 {/* BREADCRUMB */}

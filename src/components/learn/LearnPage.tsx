@@ -6,12 +6,25 @@ import Section from "./ui/Section";
 import { learnData } from "./learn.data";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/sections/Footer";
+import Link from "next/link";
 
 export default function LearnPage() {
   return (
     <div className="min-h-screen bg-white text-slate-900">
       <Navbar />
       <Container>
+        <nav className="pt-6 text-[12px] text-slate-500">
+          <ol className="flex flex-wrap items-center gap-2">
+            <li>
+              <Link href="/" className="hover:text-slate-700">
+                Home
+              </Link>
+            </li>
+            <li className="text-slate-300">/</li>
+            <li className="text-slate-700">Learn</li>
+          </ol>
+        </nav>
+
         {/* Header */}
         <div className="pt-10">
           <h1 className="text-[48px] font-semibold tracking-tight">Learn</h1>
@@ -54,13 +67,13 @@ export default function LearnPage() {
             title="Career Advice"
             seeAllHref="/learn/career-advice"
             layout="grid3"
-            items={learnData.careerAdvice}
+            items={learnData.careerAdvice.slice(0, 3)}
           />
           <Section
             title="Career Path & Resources"
             seeAllHref="/learn/career-path"
             layout="grid3"
-            items={learnData.careerPath}
+            items={learnData.careerPath.slice(0, 3)}
           />
         </div>
 
