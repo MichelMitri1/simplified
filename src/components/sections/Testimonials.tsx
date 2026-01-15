@@ -23,37 +23,37 @@ const testimonials = [
   {
     name: "Destin Strong",
     image: DestinImg,
-    quote: "I think the greatest thing about this program is the access to the support team 24/7. They are always there ready to help you however you need. They always check up on you to see if you need anything. There are also so many useful resources available on the site that you can pretty much find anything you're looking for. The structure of the program is easy to follow and as a beginner who had no previous coding experience, this is exactly what I needed as a roadmap. There's not really anything negative I can say about FES because they have literally been there every step of my journey to help get me where I want to be.",
+    quote: "I think the greatest thing about this program is the access to the support team 24/7. They are always there ready to help you however you need. They always check up on you to see if you need anything. There are also so many useful resources available on the site that you can pretty much find anything you're looking for. The structure of the program is easy to follow and as a beginner who had no previous coding experience, this is exactly what I needed as a roadmap. There's not really anything negative I can say about Simplified because they have literally been there every step of my journey to help get me where I want to be.",
     rating: 5,
   },
   {
     name: "Thanya",
     image: ThanyaImg,
-    quote: "I'm excited to say that I'm in the process of applying for jobs and feel confident with the skills I developed here at FES. The mentors are amazing in being informative and providing support in difficult times. Whenever I felt stuck, I would reach out to the mentors, and someone was always there when I needed them, and it's nice learning from someone experienced! It's been quite a journey for me, but I don't regret a single moment because I learned so much about myself and what I'm capable of creating. The skills I learned with FES are forever, and I've gained a great understanding of problem-solving, building, and being creative when building these websites. I recommend FES for those who are dedicated to learning, willing to put in the work, and don't mind adapting to change.",
+    quote: "I'm excited to say that I'm in the process of applying for jobs and feel confident with the skills I developed here at Simplified. The mentors are amazing in being informative and providing support in difficult times. Whenever I felt stuck, I would reach out to the mentors, and someone was always there when I needed them, and it's nice learning from someone experienced! It's been quite a journey for me, but I don't regret a single moment because I learned so much about myself and what I'm capable of creating. The skills I learned with Simplified are forever, and I've gained a great understanding of problem-solving, building, and being creative when building these websites. I recommend Simplified for those who are dedicated to learning, willing to put in the work, and don't mind adapting to change.",
     rating: 5,
   },
   {
     name: "Khosro Shariatzadeh",
     image: KhosroImg,
-    quote: "I can tell FES Bootcamp is one of the best experiences l've had in learning online. I have no experience or knowledge in coding or even computer science, but the way they explain all the topics in coding from the beginning makes it so simple to understand and all the projects that you are going to do along the course help you be more confident in coding. Besides all of those benefits, you'll have 24/7 access to help from professional mentors from reviewing your codes, and projects to help you find the solutions if you get stuck in any step. They support you from the beginning to practice interviews, building a resume and applying for a job.",
+    quote: "I can tell Simplified Bootcamp is one of the best experiences l've had in learning online. I have no experience or knowledge in coding or even computer science, but the way they explain all the topics in coding from the beginning makes it so simple to understand and all the projects that you are going to do along the course help you be more confident in coding. Besides all of those benefits, you'll have 24/7 access to help from professional mentors from reviewing your codes, and projects to help you find the solutions if you get stuck in any step. They support you from the beginning to practice interviews, building a resume and applying for a job.",
     rating: 5,
   },
   {
     name: "Mat Grahame",
     image: null,
-    quote: "FES has been a great tool to learn how to do frontend development. The lessons they provide are direct and teach you the best way to learn that is also easy to understand. They also do 1 on 1 and a weekly Q&A to help you even further. Could not recommend it enough",
+    quote: "Simplified has been a great tool to learn how to do frontend development. The lessons they provide are direct and teach you the best way to learn that is also easy to understand. They also do 1 on 1 and a weekly Q&A to help you even further. Could not recommend it enough",
     rating: 5,
   },
   {
     name: "Manish Manwani",
     image: ManishImg,
-    quote: "Frontend Simplified completely changed my life. I landed a top tech internship after a month of Frontend Simplified",
+    quote: "Simplified completely changed my life. I landed a top tech internship after a month of Simplified",
     rating: 5,
   },
   {
     name: "Ethan Salonga",
     image: EthanImg,
-    quote: "Even if you only have one or two hours a day to do Frontend Simplified, you will succeed, just like I did.",
+    quote: "Even if you only have one or two hours a day to do Simplified, you will succeed, just like I did.",
     rating: 5,
   },
   {
@@ -77,7 +77,7 @@ const testimonials = [
   {
     name: "Daryl Deogracias",
     image: DarylImg,
-    quote: "The frontend skills and best practises I learned at FES, really made me shine.",
+    quote: "The frontend skills and best practises I learned at Simplified, really made me shine.",
     rating: 5,
   },
   {

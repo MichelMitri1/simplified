@@ -74,7 +74,7 @@ export default function Hero() {
               className="group"
               onClick={() => scrollToSection("waitlist")}
             >
-              Start Learning
+              Join Waitlist
               <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </Button>
             <Button
