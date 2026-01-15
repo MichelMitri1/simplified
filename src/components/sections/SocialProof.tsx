@@ -6,14 +6,14 @@ import Section from "@/components/ui/Section";
 
 // Company logos from public/learn/icons
 const companies = [
-  { name: "Google", logo: "/learn/icons/google.svg", url: "https://www.google.com" },
   { name: "Microsoft", logo: "/learn/icons/microsoft.svg", url: "https://www.microsoft.com" },
   { name: "Amazon", logo: "/learn/icons/amazon.svg", url: "https://www.amazon.com" },
-  { name: "Apple", logo: "/learn/icons/apple.svg", url: "https://www.apple.com" },
-  { name: "Netflix", logo: "/learn/icons/netflix.svg", url: "https://www.netflix.com" },
-  { name: "Airbnb", logo: "/learn/icons/airbnb.svg", url: "https://www.airbnb.com" },
-  { name: "Stripe", logo: "/learn/icons/stripe.svg", url: "https://www.stripe.com" },
-  { name: "Shopify", logo: "/learn/icons/shopify.svg", url: "https://www.shopify.com" }
+  { name: "Atlassian", logo: "/learn/icons/atlassian.svg", url: "https://www.atlassian.com" },
+  { name: "Bank of America", logo: "/learn/icons/bankOfAmerica.svg", url: "https://www.bankofamerica.com" },
+  { name: "Canva", logo: "/learn/icons/canva.svg", url: "https://www.canva.com" },
+  { name: "Capital One", logo: "/learn/icons/capitalOne.svg", url: "https://www.capitalone.com" },
+  { name: "Coinbase", logo: "/learn/icons/coinbase.svg", url: "https://www.coinbase.com" },
+  { name: "TikTok", logo: "/learn/icons/tiktok.svg", url: "https://www.tiktok.com" }
 ];
 
 export default function SocialProof() {
@@ -56,11 +56,10 @@ export default function SocialProof() {
                 <Image 
                   src={company.logo} 
                   alt={company.name}
-                  width={company.name === "Apple" ? 40 : 120}
-                  height={company.name === "Apple" ? 40 : 60}
+                  width={company.name === "Bank of America" ? 200 : 120}
+                  height={company.name === "Bank of America" ? 120 : 60}
                   className="object-contain"
                 />
-                {company.name === "Apple" && <h1 className="text-2xl font-bold text-gray-800">Apple</h1>}
               </a>
             </motion.div>
           ))}
