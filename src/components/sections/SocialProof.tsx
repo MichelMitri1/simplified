@@ -1,25 +1,19 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 import Section from "@/components/ui/Section";
 
-// Company logos (using placeholder text - in production, replace with actual logo images)
+// Company logos from public/learn/icons
 const companies = [
-  { name: "Google", url: "https://www.google.com" },
-  { name: "Meta", url: "https://www.meta.com" },
-  { name: "Amazon", url: "https://www.amazon.com" },
-  { name: "Microsoft", url: "https://www.microsoft.com" },
-  { name: "Apple", url: "https://www.apple.com" },
-  { name: "Netflix", url: "https://www.netflix.com" },
-  { name: "Uber", url: "https://www.uber.com" },
-  { name: "Airbnb", url: "https://www.airbnb.com" },
-  { name: "Stripe", url: "https://www.stripe.com" },
-  { name: "Shopify", url: "https://www.shopify.com" },
-  { name: "Tesla", url: "https://www.tesla.com" },
-  { name: "Adobe", url: "https://www.adobe.com" },
-  { name: "Salesforce", url: "https://www.salesforce.com" },
-  { name: "Oracle", url: "https://www.oracle.com" },
-  { name: "IBM", url: "https://www.ibm.com" }
+  { name: "Google", logo: "/learn/icons/google.svg", url: "https://www.google.com" },
+  { name: "Microsoft", logo: "/learn/icons/microsoft.svg", url: "https://www.microsoft.com" },
+  { name: "Amazon", logo: "/learn/icons/amazon.svg", url: "https://www.amazon.com" },
+  { name: "Apple", logo: "/learn/icons/apple.svg", url: "https://www.apple.com" },
+  { name: "Netflix", logo: "/learn/icons/netflix.svg", url: "https://www.netflix.com" },
+  { name: "Airbnb", logo: "/learn/icons/airbnb.svg", url: "https://www.airbnb.com" },
+  { name: "Stripe", logo: "/learn/icons/stripe.svg", url: "https://www.stripe.com" },
+  { name: "Shopify", logo: "/learn/icons/shopify.svg", url: "https://www.shopify.com" }
 ];
 
 export default function SocialProof() {
@@ -42,9 +36,9 @@ export default function SocialProof() {
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
-          className="grid grid-cols-3 md:grid-cols-5 gap-8 md:gap-12 items-center justify-items-center mb-16"
+          className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 items-center justify-items-center mb-16"
         >
-          {companies.slice(0, 10).map((company, index) => (
+          {companies.map((company, index) => (
             <motion.div
               key={index}
               initial={{ opacity: 0, scale: 0.8 }}
@@ -53,14 +47,20 @@ export default function SocialProof() {
               transition={{ duration: 0.5, delay: index * 0.05 }}
               className="flex items-center justify-center"
             >
-              {/* Placeholder for company logos - replace with actual <Image> components */}
               <a 
                 href={company.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-2xl font-bold text-gray-400 hover:text-gray-700 transition-colors duration-300"
+                className="hover:opacity-75 transition-opacity duration-300 flex items-center gap-2"
               >
-                {company.name}
+                <Image 
+                  src={company.logo} 
+                  alt={company.name}
+                  width={company.name === "Apple" ? 40 : 120}
+                  height={company.name === "Apple" ? 40 : 60}
+                  className="object-contain"
+                />
+                {company.name === "Apple" && <h1 className="text-2xl font-bold text-gray-800">Apple</h1>}
               </a>
             </motion.div>
           ))}

@@ -46,9 +46,9 @@ export default function Programs() {
     <Section id="programs" background="white">
       <SectionHeader
         title="Programs to Build Your Skills"
-        subtitle="Choose your path to work in tech and launch your career. Our coding bootcamps cover full stack web development and AI. All programs include 1:1 mentorship, hands-on projects, career support, and lifetime access. Go from beginner to job-ready, no matter your background."
+        subtitle="Choose your path to land your dream job and launch your new career. Our education platform covers full-stack web development, AI and Digital Marketing. All programs include 1:1 mentorship, hands-on projects and career support. As long as you're motivating and committed, we'll help you go from beginner to job-ready."
       />
-      
+
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         {programs.map((program, index) => (
           <motion.div
@@ -65,7 +65,7 @@ export default function Programs() {
                   <program.icon className="w-8 h-8 text-white" />
                 </div>
               </div>
-              
+
               {/* Header */}
               <div className="mb-6">
                 <div className="flex items-center justify-between mb-3">
@@ -76,7 +76,7 @@ export default function Programs() {
                 </div>
                 <p className="text-gray-600 leading-relaxed">{program.description}</p>
               </div>
-              
+
               {/* Skills */}
               <div className="mb-6">
                 <h4 className="text-sm font-semibold text-gray-700 mb-3">You&apos;ll Learn:</h4>
@@ -91,13 +91,13 @@ export default function Programs() {
                   ))}
                 </div>
               </div>
-              
+
               {/* CTA removed per request */}
             </Card>
           </motion.div>
         ))}
       </div>
-      
+
       {/* Bottom note */}
       <motion.div
         initial={{ opacity: 0 }}
@@ -106,8 +106,7 @@ export default function Programs() {
         className="mt-12 text-center"
       >
         <p className="text-gray-600">
-          All our stack web development courses include 1:1 mentorship, career coaching, and career support.
-        </p>
+          All our programs include 1:1 mentorship, career coaching, and career support.        </p>
       </motion.div>
     </Section>
   );

@@ -10,6 +10,14 @@ import { Star, Quote } from "lucide-react";
 import DestinImg from "@/assets/destin-strong.jpg";
 import ThanyaImg from "@/assets/thanya.jpg";
 import KhosroImg from "@/assets/khosro.jpeg";
+import ManishImg from "@/assets/manish.png";
+import EthanImg from "@/assets/ethan.png";
+import MohammadImg from "@/assets/michael.png";
+import MichaelImg from "@/assets/michael.png";
+import JoseImg from "@/assets/jose.png";
+import DarylImg from "@/assets/daryl.png";
+import HatemImg from "@/assets/hatem.png";
+import VuImg from "@/assets/vuvu.png";
 
 const testimonials = [
   {
@@ -24,7 +32,7 @@ const testimonials = [
     quote: "I'm excited to say that I'm in the process of applying for jobs and feel confident with the skills I developed here at FES. The mentors are amazing in being informative and providing support in difficult times. Whenever I felt stuck, I would reach out to the mentors, and someone was always there when I needed them, and it's nice learning from someone experienced! It's been quite a journey for me, but I don't regret a single moment because I learned so much about myself and what I'm capable of creating. The skills I learned with FES are forever, and I've gained a great understanding of problem-solving, building, and being creative when building these websites. I recommend FES for those who are dedicated to learning, willing to put in the work, and don't mind adapting to change.",
     rating: 5,
   },
-   {
+  {
     name: "Khosro Shariatzadeh",
     image: KhosroImg,
     quote: "I can tell FES Bootcamp is one of the best experiences l've had in learning online. I have no experience or knowledge in coding or even computer science, but the way they explain all the topics in coding from the beginning makes it so simple to understand and all the projects that you are going to do along the course help you be more confident in coding. Besides all of those benefits, you'll have 24/7 access to help from professional mentors from reviewing your codes, and projects to help you find the solutions if you get stuck in any step. They support you from the beginning to practice interviews, building a resume and applying for a job.",
@@ -34,6 +42,54 @@ const testimonials = [
     name: "Mat Grahame",
     image: null,
     quote: "FES has been a great tool to learn how to do frontend development. The lessons they provide are direct and teach you the best way to learn that is also easy to understand. They also do 1 on 1 and a weekly Q&A to help you even further. Could not recommend it enough",
+    rating: 5,
+  },
+  {
+    name: "Manish Manwani",
+    image: ManishImg,
+    quote: "Frontend Simplified completely changed my life. I landed a top tech internship after a month of Frontend Simplified",
+    rating: 5,
+  },
+  {
+    name: "Ethan Salonga",
+    image: EthanImg,
+    quote: "Even if you only have one or two hours a day to do Frontend Simplified, you will succeed, just like I did.",
+    rating: 5,
+  },
+  {
+    name: "Mohammad Totonchy",
+    image: MohammadImg,
+    quote: "The content is well structured and mapped compared to all the courses I have done.",
+    rating: 5,
+  },
+  {
+    name: "Michael Ignat",
+    image: MichaelImg,
+    quote: "I got multiple interviews within a few days of applying. David really just focuses on the things that matter.",
+    rating: 5,
+  },
+  {
+    name: "Jose Hernandez",
+    image: JoseImg,
+    quote: "I would also love for you guys to end up successful same as I did.",
+    rating: 5,
+  },
+  {
+    name: "Daryl Deogracias",
+    image: DarylImg,
+    quote: "The frontend skills and best practises I learned at FES, really made me shine.",
+    rating: 5,
+  },
+  {
+    name: "Hatem Soliman",
+    image: HatemImg,
+    quote: "Within 2 weeks I was able to get my first freelance project with a client.",
+    rating: 5,
+  },
+  {
+    name: "Vu Vu",
+    image: VuImg,
+    quote: "The course is very structured and easy to follow along, which made the experience learning much faster.",
     rating: 5,
   },
 ];

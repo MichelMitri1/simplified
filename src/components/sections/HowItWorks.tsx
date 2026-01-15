@@ -9,13 +9,13 @@ const steps = [
   {
     icon: BookOpen,
     title: "Choose Your Path",
-    description: "Select from our tech bootcamps: Frontend Development, Backend Engineering, or AI & Machine Learning. Each path is designed for hands-on learning with real-world job requirements.",
+    description: "Select from one of our bootcamps: Frontend Development, Backend Engineering, AI & Machine Learning or Digital Marketing. Each path is designed for hands-on learning with real-world projects to fit job requirements.",
     color: "bg-brand",
   },
   {
     icon: Users,
     title: "Learn with Mentors",
-    description: "Get personalized 1:1 guidance from industry professionals. They'll review your code, answer questions, and share practical insights from real-world experience.",
+    description: "Get personalized 1:1 guidance from industry professionals. They'll review your projects, answer your questions, and share practical insights from real-world experience.",
     color: "bg-black",
   },
   {
@@ -27,8 +27,7 @@ const steps = [
   {
     icon: TrendingUp,
     title: "Start Your Career",
-    description: "Get career support to land your first tech role. We'll help with your resume, interview prep, and connect you with our network of hiring partners.",
-    color: "bg-black",
+    description: "Get career support to land your first role. We'll help with everything you need from a personalized resume, 1:1 mock interviews, and show you the proven methods to break into the industry."
   },
 ];
 
@@ -37,13 +36,13 @@ export default function HowItWorks() {
     <Section id="how-it-works" background="gray">
       <SectionHeader
         title="How Simplified.org Works"
-        subtitle="A proven approach to learning tech skills and launching your career. Our four-step process has helped thousands transition into tech. Each step builds on the previous one, developing your technical skills and professional confidence."
+        subtitle="A proven approach to transitioning into your dream high-paying career. Our four-step approach helped train thousands of professionals. Each step builds on the previous one, giving you confidence until you ultimately land your dream job."
       />
-      
+
       <div className="relative">
         {/* Connecting line (desktop) */}
         <div className="hidden md:block absolute top-24 left-0 right-0 h-0.5 bg-gradient-to-r from-transparent via-gray-300 to-transparent" />
-        
+
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {steps.map((step, index) => (
             <motion.div
@@ -63,7 +62,7 @@ export default function HowItWorks() {
                   <step.icon className="w-8 h-8 text-white" />
                 </motion.div>
               </div>
-              
+
               {/* Content */}
               <div className="text-center">
                 <div className="inline-block bg-white rounded-full px-4 py-1 text-sm font-bold text-gray-400 mb-4">
@@ -72,7 +71,7 @@ export default function HowItWorks() {
                 <h3 className="text-2xl font-bold mb-4">{step.title}</h3>
                 <p className="text-gray-600 leading-relaxed">{step.description}</p>
               </div>
-              
+
               {/* Arrow connector (mobile) */}
               {index < steps.length - 1 && (
                 <div className="md:hidden flex justify-center my-6">
@@ -95,7 +94,7 @@ export default function HowItWorks() {
           ))}
         </div>
       </div>
-      
+
       {/* Bottom CTA */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}

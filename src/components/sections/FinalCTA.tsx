@@ -7,7 +7,7 @@ import { useEffect, useState } from "react";
 const benefits = [
   "1:1 mentorship from industry experts",
   "AI-powered learning platform",
-  "Lifetime access to all materials",
+  "Access to cutting-edge learning material",
   "Career support and guidance",
   "Flexible, self-paced learning",
   "Start learning anytime",
@@ -233,7 +233,6 @@ export default function FinalCTA() {
             transition={{ duration: 0.6, delay: 0.3 }}
             className="mt-12 text-sm opacity-75"
           >
-            <p>✓ No credit card required • ✓ Start anytime • ✓ Flexible learning</p>
           </motion.div>
         </div>
       </div>
