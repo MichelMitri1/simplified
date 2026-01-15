@@ -1,3 +1,9 @@
+import { notFound } from "next/navigation";
+
+// BLOG PAGE TEMPORARILY DISABLED
+// Uncomment below to re-enable
+
+/*
 import LearnPage from "@/components/learn/LearnPage";
 import type { Metadata } from "next";
 
@@ -46,7 +52,9 @@ export const metadata: Metadata = {
     },
   },
 };
+*/
 
 export default function Page() {
-  return <LearnPage />;
+  // return <LearnPage />;
+  notFound();
 }

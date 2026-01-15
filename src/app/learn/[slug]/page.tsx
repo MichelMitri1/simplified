@@ -1,7 +1,13 @@
+// BLOG PAGE TEMPORARILY DISABLED
+// Uncomment below to re-enable
+
+/*
 import BlogPostPage from "@/components/blog/BlogPostPage";
 import { learnData } from "@/components/learn/learn.data";
 import type { Metadata } from "next";
+*/
 import { notFound } from "next/navigation";
+/*
 import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
@@ -115,4 +121,13 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 export default async function Page({ params }: PageProps) {
   const { slug } = await params;
   return <BlogPostPage slug={slug} />;
+}
+*/
+
+type PageProps = {
+  params: Promise<{ slug: string }>;
+};
+
+export default async function Page({ params }: PageProps) {
+  notFound();
 }

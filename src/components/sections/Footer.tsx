@@ -65,14 +65,14 @@ export default function Footer() {
                   Join waitlist
                 </a>
               </li>
-              <li>
+              {/* <li>
                 <Link
                   href="/learn"
                   className="text-gray-400 hover:text-white transition-colors duration-200"
                 >
                   Learn
                 </Link>
-              </li>
+              </li> */}
             </ul>
           </div>
         </div>
