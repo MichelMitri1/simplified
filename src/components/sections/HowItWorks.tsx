@@ -27,7 +27,8 @@ const steps = [
   {
     icon: TrendingUp,
     title: "Start Your Career",
-    description: "Get career support to land your first role. We'll help with everything you need from a personalized resume, 1:1 mock interviews, and show you the proven methods to break into the industry."
+    description: "Get career support to land your first role. We'll help with everything you need from a personalized resume, 1:1 mock interviews, and show you the proven methods to break into the industry.",
+    color: "bg-black",
   },
 ];
 
