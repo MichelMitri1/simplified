@@ -1,8 +1,8 @@
 "use client";
 
-import { motion } from "framer-motion";
-import { CheckCircle2, Loader } from "lucide-react";
-import { useEffect, useState } from "react";
+import { FormEvent, useEffect, useState } from "react";
+import { ArrowRight, CheckCircle } from "lucide-react";
+import ScribbleUnderline from "@/components/ui/ScribbleUnderline";
 
 const benefits = [
   "1:1 mentorship from industry experts",
@@ -13,227 +13,231 @@ const benefits = [
   "Start learning anytime",
 ];
 
-const generateUniqueId = () => {
-  return `user_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`;
+const BOOK_CALL_STORAGE_KEY = "simplified-book-call-submitted";
+
+type Booking = {
+  name: string;
+  email: string;
 };
 
 export default function FinalCTA() {
-  const [formData, setFormData] = useState({ name: "", email: "", message: "" });
-  const [isLoading, setIsLoading] = useState(false);
-  const [isSubmitted, setIsSubmitted] = useState(false);
-  const [userId, setUserId] = useState<string | null>(null);
+  const [booking, setBooking] = useState<Booking | null>(null);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
 
-  // Check if user already submitted on mount
   useEffect(() => {
-    if (typeof window !== "undefined") {
-      const savedUserId = localStorage.getItem("waitlistUserId");
-      const hasSubmitted = localStorage.getItem("waitlistHasSubmitted");
+    const storedBooking = window.localStorage.getItem(BOOK_CALL_STORAGE_KEY);
+    if (!storedBooking) return;
 
-      if (savedUserId && hasSubmitted === "true") {
-        setUserId(savedUserId);
-        setIsSubmitted(true);
-      } else if (!savedUserId) {
-        // Generate new unique ID for this user/device
-        const newId = generateUniqueId();
-        setUserId(newId);
-        localStorage.setItem("waitlistUserId", newId);
-        localStorage.setItem("waitlistHasSubmitted", "false");
-      }
+    try {
+      setBooking(JSON.parse(storedBooking) as Booking);
+    } catch {
+      setBooking({ name: "there", email: "" });
     }
   }, []);
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value } = e.target;
-    setFormData((prev) => ({ ...prev, [name]: value }));
+  const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    if (isSubmitting || booking) return;
+
+    const formData = new FormData(event.currentTarget);
+    const name = String(formData.get("fullName") ?? "").trim();
+    const email = String(formData.get("email") ?? "").trim();
+    const message = String(formData.get("message") ?? "").trim();
+    const form = event.currentTarget;
+    const submittedBooking = {
+      name: name || "there",
+      email,
+    };
+
+    setIsSubmitting(true);
+    setSubmitError(null);
+
+    try {
+      const response = await fetch("/api/book-call", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          fullName: name,
+          email,
+          message,
+        }),
+      });
+
+      if (!response.ok) {
+        throw new Error("Unable to send booking");
+      }
+
+      window.localStorage.setItem(
+        BOOK_CALL_STORAGE_KEY,
+        JSON.stringify(submittedBooking),
+      );
+      setBooking(submittedBooking);
+      form.reset();
+    } catch {
+      setSubmitError(
+        "Something went wrong while sending this. Please try again.",
+      );
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    
-    if (!formData.name || !formData.email || !formData.message) {
-      alert("Please fill in all fields");
-      return;
-    }
-
-    setIsLoading(true);
-    
-    // Simulate 2 second loading
-    await new Promise((resolve) => setTimeout(resolve, 2000));
-    
-    // Save to localStorage
-    if (typeof window !== "undefined" && userId) {
-      localStorage.setItem("waitlistHasSubmitted", "true");
-      localStorage.setItem(`waitlistData_${userId}`, JSON.stringify(formData));
-    }
-    
-    setIsLoading(false);
-    setIsSubmitted(true);
-  };
   return (
-    <section id="waitlist" className="relative py-32 overflow-hidden">
-      {/* Background */}
-      <div className="absolute inset-0 bg-brand" />
-      
-      {/* Animated geometric shapes */}
-      <div className="absolute inset-0 overflow-hidden">
-        <motion.div
-          animate={{
-            rotate: [0, 360],
-            scale: [1, 1.2, 1],
-          }}
-          transition={{
-            duration: 20,
-            repeat: Infinity,
-            ease: "linear",
-          }}
-          className="absolute -top-40 -right-40 w-96 h-96 bg-white/10 rounded-full blur-3xl"
-        />
-        <motion.div
-          animate={{
-            rotate: [360, 0],
-            scale: [1, 1.3, 1],
-          }}
-          transition={{
-            duration: 25,
-            repeat: Infinity,
-            ease: "linear",
-          }}
-          className="absolute -bottom-40 -left-40 w-96 h-96 bg-white/10 rounded-full blur-3xl"
-        />
+    <section
+      id="waitlist"
+      className="relative overflow-hidden bg-white py-16 md:py-24"
+    >
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-x-0 bottom-[-92px] h-[260px] md:hidden"
+      >
+        <div className="mobile-ending-animation">
+          <div className="mobile-ending-blob mobile-ending-blob-purple" />
+          <div className="mobile-ending-blob mobile-ending-blob-peach" />
+        </div>
       </div>
-      
-      <div className="container mx-auto px-4 md:px-6 lg:px-8 max-w-5xl relative z-10">
-        <div className="text-center text-white">
-          {/* Main CTA Content */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-          >
-            <h2 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 text-balance">
-              Start Learning Today
-            </h2>
-            <p className="text-xl md:text-2xl mb-12 opacity-90 text-balance max-w-3xl mx-auto">
-              Join thousands of students building careers in technology with Simplified.org.
-            </p>
-          </motion.div>
-          
-          {/* Benefits Grid */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.1 }}
-            className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-12 max-w-2xl mx-auto"
-          >
-            {benefits.map((benefit, index) => (
-              <div key={index} className="flex items-center gap-3 text-left">
-                <CheckCircle2 className="w-6 h-6 flex-shrink-0" />
-                <span className="text-lg">{benefit}</span>
-              </div>
-            ))}
-          </motion.div>
-          
-          {/* CTA Form or Success Message */}
-          {!isSubmitted ? (
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="max-w-2xl mx-auto bg-white rounded-2xl p-8 md:p-12 shadow-2xl"
-            >
-              <h3 className="text-3xl font-bold text-black mb-8">Join the Waitlist</h3>
-              
-              <form onSubmit={handleSubmit} className="space-y-6">
-                {/* Name and Email Row */}
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div>
-                    <label className="block text-left text-sm font-semibold text-black mb-3">Full Name *</label>
-                    <input
-                      type="text"
-                      name="name"
-                      placeholder="Your full name"
-                      value={formData.name}
-                      onChange={handleChange}
-                      disabled={isLoading}
-                      className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg text-black placeholder-gray-400 font-medium focus:outline-none focus:border-brand transition-colors disabled:opacity-50 bg-white"
-                    />
-                  </div>
-                  <div>
-                    <label className="block text-left text-sm font-semibold text-black mb-3">Email Address *</label>
-                    <input
-                      type="email"
-                      name="email"
-                      placeholder="your@email.com"
-                      value={formData.email}
-                      onChange={handleChange}
-                      disabled={isLoading}
-                      className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg text-black placeholder-gray-400 font-medium focus:outline-none focus:border-brand transition-colors disabled:opacity-50 bg-white"
-                    />
+
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute bottom-[-120px] right-[-120px] hidden h-[420px] w-[760px] md:block"
+      >
+        <div className="mentors-ending-blob mentors-ending-blob-purple" />
+        <div className="mentors-ending-blob mentors-ending-blob-peach" />
+      </div>
+
+      <div className="relative z-10 mx-auto w-full max-w-7xl px-4 md:px-6 lg:px-8">
+        <div className="grid grid-cols-1 gap-8 lg:grid-cols-2 lg:items-start">
+          {/* Left */}
+          <div className="flex flex-col gap-6 pt-2">
+            <div className="flex flex-col gap-5 sm:gap-8">
+              <h2 className="max-w-[420px] text-[40px] font-medium leading-[1.08] tracking-[-0.03em] text-[#111] sm:text-[48px] md:text-[56px] md:leading-[1.2]">
+                Ready to take the{" "}
+                <span className="relative inline-block">
+                  next step?
+                  <ScribbleUnderline className="pointer-events-none absolute -bottom-2 left-0 hidden w-full sm:block" />
+                </span>
+              </h2>
+              <p className="text-[20px] leading-[1.45] text-[#111]/70 sm:text-[22px] md:text-[24px] md:leading-[1.5]">
+                Start your journey to success with us today.
+              </p>
+            </div>
+
+            <ul className="flex flex-col gap-2.5">
+              {benefits.map((benefit) => (
+                <li
+                  key={benefit}
+                  className="flex items-start gap-2 text-[16px] leading-[1.45] text-[#111]/70 sm:text-[18px] md:text-[20px] md:leading-[1.5]"
+                >
+                  <CheckCircle className="mt-0.5 h-5 w-5 shrink-0 text-primary md:h-6 md:w-6" />
+                  <span>{benefit}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Right — form card */}
+          <article className="rounded-[24px] border border-[#111]/[0.12] bg-white p-6">
+            {booking ? (
+              <div className="flex min-h-[430px] flex-col justify-center gap-5">
+                <div className="flex flex-col gap-5 items-center">
+                  <span className="inline-flex h-12 w-12 items-center justify-center rounded-full bg-primary/10 text-primary">
+                    <CheckCircle className="h-7 w-7" />
+                  </span>
+                  <div className="flex flex-col gap-3 items-center">
+                    <h3 className="text-[28px] font-medium leading-tight text-[#111]">
+                      You&apos;re booked, {booking.name}.
+                    </h3>
+                    <p className="text-[18px] leading-[1.5] text-[#111]/70 text-center">
+                      Thanks for reaching out! We&apos;ll sending the next steps shortly.
+                    </p>
                   </div>
                 </div>
-
-                {/* Message Textarea */}
-                <div>
-                  <label className="block text-left text-sm font-semibold text-black mb-3">Message</label>
-                  <textarea
-                    name="message"
-                    placeholder="Write something down"
-                    value={formData.message}
-                    onChange={handleChange}
-                    disabled={isLoading}
-                    rows={5}
-                    className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg text-black placeholder-gray-400 font-medium focus:outline-none focus:border-brand transition-colors disabled:opacity-50 bg-white resize-none"
+              </div>
+            ) : (
+              <form className="flex flex-col gap-4" onSubmit={handleSubmit}>
+                <div className="flex flex-col gap-2">
+                  <label
+                    htmlFor="fullName"
+                    className="text-[16px] leading-[1.5] text-[#1e1e1e]"
+                  >
+                    Full name
+                  </label>
+                  <input
+                    id="fullName"
+                    name="fullName"
+                    type="text"
+                    required
+                    disabled={isSubmitting}
+                    placeholder="Enter your full name"
+                    className="w-full rounded-[8px] border border-[#d9d9d9] bg-white px-4 py-3 text-[18px] leading-[1.5] text-[#1e1e1e] outline-none transition placeholder:text-[#b3b3b3] focus:border-[#111]/30 disabled:cursor-not-allowed disabled:opacity-60"
                   />
                 </div>
 
-                {/* Submit Button */}
-                <motion.button
+                <div className="flex flex-col gap-2">
+                  <label
+                    htmlFor="email"
+                    className="text-[16px] leading-[1.5] text-[#1e1e1e]"
+                  >
+                    Email address
+                  </label>
+                  <input
+                    id="email"
+                    name="email"
+                    type="email"
+                    required
+                    disabled={isSubmitting}
+                    placeholder="your@example.com"
+                    className="w-full rounded-[8px] border border-[#d9d9d9] bg-white px-4 py-3 text-[18px] leading-[1.5] text-[#1e1e1e] outline-none transition placeholder:text-[#b3b3b3] focus:border-[#111]/30 disabled:cursor-not-allowed disabled:opacity-60"
+                  />
+                </div>
+
+                <div className="flex flex-col gap-2">
+                  <label
+                    htmlFor="message"
+                    className="text-[16px] leading-[1.5] text-[#1e1e1e]"
+                  >
+                    Message
+                  </label>
+                  <textarea
+                    id="message"
+                    name="message"
+                    rows={7}
+                    disabled={isSubmitting}
+                    placeholder="Write something down"
+                    className="w-full resize-none rounded-[8px] border border-[#d9d9d9] bg-white px-4 py-3 text-[18px] leading-[1.5] text-[#1e1e1e] outline-none transition placeholder:text-[#b3b3b3] focus:border-[#111]/30 disabled:cursor-not-allowed disabled:opacity-60"
+                  />
+                </div>
+
+                <button
                   type="submit"
-                  disabled={isLoading}
-                  whileHover={{ scale: isLoading ? 1 : 1.01 }}
-                  whileTap={{ scale: isLoading ? 1 : 0.98 }}
-                  className="w-full bg-brand text-white font-bold py-4 rounded-lg text-lg shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center gap-2 disabled:opacity-75 cursor-pointer"
+                  disabled={isSubmitting}
+                  className="inline-flex h-[51px] w-full items-center justify-center gap-3.5 rounded-full bg-primary pl-4 pr-3 text-[18px] font-semibold text-white transition hover:brightness-95 disabled:cursor-wait disabled:opacity-75"
                 >
-                  {isLoading ? (
+                  {isSubmitting ? (
                     <>
-                      <Loader className="w-5 h-5 animate-spin" />
-                      Joining Waitlist...
+                      Sending
+                      <span className="h-5 w-5 animate-spin rounded-full border-2 border-white/35 border-t-white" />
                     </>
                   ) : (
-                    "Join Waitlist"
+                    <>
+                      Book a call
+                      <span className="inline-flex h-6 w-6 items-center justify-center rounded-full bg-[linear-gradient(90deg,_#E95E32_3.12%,_#BD4F2C_70.19%)]">
+                        <ArrowRight className="h-3.5 w-3.5 text-white" />
+                      </span>
+                    </>
                   )}
-                </motion.button>
+                </button>
+                {submitError && (
+                  <p className="text-center text-[14px] font-medium text-red-600">
+                    {submitError}
+                  </p>
+                )}
               </form>
-            </motion.div>
-          ) : (
-            <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.5 }}
-              className="max-w-2xl mx-auto bg-white rounded-2xl p-8 md:p-12 text-center shadow-2xl"
-            >
-              <div className="mb-4 flex justify-center">
-                <CheckCircle2 className="w-16 h-16 text-brand" />
-              </div>
-              <h3 className="text-3xl font-bold text-black mb-3">You&apos;re on the Waitlist!</h3>
-              <p className="text-lg text-gray-600">
-                Thanks for joining! We&apos;ll be in touch soon with more details about Simplified.org.
-              </p>
-            </motion.div>
-          )}
-          
-          {/* Trust indicators */}
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.3 }}
-            className="mt-12 text-sm opacity-75"
-          >
-          </motion.div>
+            )}
+          </article>
         </div>
       </div>
     </section>

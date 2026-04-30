@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
-import { Inter, Space_Grotesk } from "next/font/google";
+import { Inter, Space_Grotesk, Geist } from "next/font/google";
 import "./globals.css";
+import { cn } from "@/lib/utils";
+
+const geist = Geist({ subsets: ["latin"], variable: "--font-sans" });
 
 const inter = Inter({
   variable: "--font-inter",
@@ -20,7 +23,8 @@ export const metadata: Metadata = {
     default: "Simplified.org - Tech Bootcamp Online & Machine Learning Bootcamp",
     template: "%s | Simplified.org",
   },
-  description: "The world's most effective education platform for landing high-paying tech roles. Job guarantee, 1:1 mentorship, AI-powered coursework.",
+  description:
+    "The world's most effective education platform for landing high-paying tech roles. Job guarantee, 1:1 mentorship, AI-powered coursework.",
   keywords: [
     "machine learning bootcamp",
     "tech bootcamp online",
@@ -42,7 +46,8 @@ export const metadata: Metadata = {
     url: "https://simplified.org",
     siteName: "Simplified.org",
     title: "Simplified.org - Tech Bootcamp Online & Machine Learning Bootcamp",
-    description: "The world's most effective education platform for landing high-paying tech roles. Job guarantee, 1:1 mentorship, AI-powered coursework.",
+    description:
+      "The world's most effective education platform for landing high-paying tech roles. Job guarantee, 1:1 mentorship, AI-powered coursework.",
     images: [
       {
         url: "/og-image.png",
@@ -80,10 +85,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html
+      lang="en"
+      className={cn("font-sans", geist.variable)}
+      suppressHydrationWarning
+    >
       <body
         className={`${inter.variable} ${spaceGrotesk.variable} font-sans antialiased`}
         data-keywords="machine-learning-bootcamp tech-career-training no-degree-tech"
+        suppressHydrationWarning
       >
         {children}
       </body>

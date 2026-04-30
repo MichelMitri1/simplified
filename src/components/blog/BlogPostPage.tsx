@@ -118,7 +118,7 @@ export default function BlogPostPage({ slug }: { slug: string }) {
     };
 
     return (
-        <div className="min-h-screen bg-white text-slate-900">
+        <div className="min-h-screen text-slate-900">
             {/* JSON-LD Structured Data */}
             <script
                 type="application/ld+json"

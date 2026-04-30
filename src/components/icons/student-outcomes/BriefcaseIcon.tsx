@@ -1,0 +1,36 @@
+import type { SVGProps } from "react";
+
+export function BriefcaseIcon(props: SVGProps<SVGSVGElement>) {
+  return (
+    <svg viewBox="0 0 20 20" fill="none" {...props}>
+      <path
+        d="M16.875 5H3.125C2.77982 5 2.5 5.27982 2.5 5.625V15.625C2.5 15.9702 2.77982 16.25 3.125 16.25H16.875C17.2202 16.25 17.5 15.9702 17.5 15.625V5.625C17.5 5.27982 17.2202 5 16.875 5Z"
+        stroke="#E95E32"
+        strokeWidth="1.66667"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M13.125 5V3.75C13.125 3.41848 12.9933 3.10054 12.7589 2.86612C12.5245 2.6317 12.2065 2.5 11.875 2.5H8.125C7.79348 2.5 7.47554 2.6317 7.24112 2.86612C7.0067 3.10054 6.875 3.41848 6.875 3.75V5"
+        stroke="#E95E32"
+        strokeWidth="1.66667"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M17.5 9.24268C15.2208 10.5614 12.6333 11.2539 10 11.2497C7.36684 11.2539 4.77939 10.5618 2.5 9.24346"
+        stroke="#E95E32"
+        strokeWidth="1.66667"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M8.75 8.75H11.25"
+        stroke="#E95E32"
+        strokeWidth="1.66667"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+}
