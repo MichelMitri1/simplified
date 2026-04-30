@@ -10,7 +10,7 @@ import Link from "next/link";
 
 export default function LearnPage() {
   return (
-    <div className="min-h-screen bg-white text-slate-900">
+    <div className="min-h-screen text-slate-900">
       <Navbar />
       <Container>
         <nav className="pt-6 text-[12px] text-slate-500">
