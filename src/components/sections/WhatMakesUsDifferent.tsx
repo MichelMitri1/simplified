@@ -62,7 +62,7 @@ export default function WhatMakesUsDifferent() {
             transition={{ duration: 0.6, delay: index * 0.1 }}
             className="relative group"
           >
-            <div className="bg-white rounded-2xl p-8 shadow-lg border border-gray-100 h-full hover:shadow-2xl transition-shadow duration-300">
+            <div className="bg-primary-bg rounded-2xl p-8 shadow-lg border border-gray-100 h-full hover:shadow-2xl transition-shadow duration-300">
               {/* Highlight badge */}
               <div className="absolute -top-3 -right-3">
                 <div className="bg-brand text-white text-xs font-bold px-4 py-2 rounded-full shadow-lg">

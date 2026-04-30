@@ -90,7 +90,7 @@ export default function StudentTransformations() {
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: index * 0.1 }}
-            className="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden hover:shadow-2xl transition-shadow duration-300"
+            className="bg-primary-bg rounded-2xl shadow-lg border border-gray-100 overflow-hidden hover:shadow-2xl transition-shadow duration-300"
           >
             {/* Header */}
             <div className="bg-brand p-6 text-white relative">
